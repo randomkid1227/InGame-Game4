@@ -12,10 +12,11 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        this.levelTime = 5;
+
         this.score = 0;
         this.startTime = Time.time;
-	}
+        this.levelTime *= 0.95f;
+    }
 	
 	// Update is called once per frame
 	void Update () {

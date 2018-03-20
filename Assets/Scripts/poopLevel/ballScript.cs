@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ballScript : MonoBehaviour {
+    // Use this for initialization
+    GameObject Manager;
 
-	// Use this for initialization
 	void Start () {
-		
-	}
+        Manager = GameObject.FindGameObjectWithTag("Manager");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,6 +20,7 @@ public class ballScript : MonoBehaviour {
     {
         if (other.tag == "basket")
         {
+            Manager.GetComponent<poopLevelManager>().numberOfItems -= 1;
             Debug.Log("Hi");
             Destroy(this.gameObject);
         }
