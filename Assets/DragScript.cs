@@ -20,12 +20,6 @@ public class DragScript : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        // Add bouncy material to tha ball
-        PhysicsMaterial2D mat = new PhysicsMaterial2D();
-        mat.bounciness = 0.75f;
-        mat.friction = 0.4f;
-        GetComponent<CircleCollider2D>().sharedMaterial = mat;
-
     }
 
     // Update is called once per frame
@@ -33,6 +27,16 @@ public class DragScript : MonoBehaviour
     {
         CheckTouch();
     }
+
+    //void mouseInsteadOfTouch()
+    //{
+    //    bool clicked = Input.GetMouseButtonDown(0);
+    //    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //    if (clicked)
+    //    {
+    //        if ()
+    //    }
+    //}
 
     void CheckTouch()
     {
@@ -43,6 +47,7 @@ public class DragScript : MonoBehaviour
 
             // get touch to take a deal with
             Touch touch = Input.GetTouch(0);
+            
 
             // obtain touch position
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
@@ -90,11 +95,7 @@ public class DragScript : MonoBehaviour
                     // when thouch is ended
                     moveAllowed = false;
                     rb.freezeRotation = false;
-                    //rb.gravityScale = 2;
-                    PhysicsMaterial2D mat = new PhysicsMaterial2D();
-                    mat.bounciness = 0.75f;
-                    mat.friction = 0.4f;
-                    GetComponent<CircleCollider2D>().sharedMaterial = mat;
+
                     break;
             }
         }
