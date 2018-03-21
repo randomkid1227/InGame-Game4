@@ -49,7 +49,7 @@ public class Tappable : MonoBehaviour
                 case TouchPhase.Began:
 
                     // if you touch the ball
-                    if (GetComponent<CircleCollider2D>() == Physics2D.OverlapPoint(touchPos))
+                    if (GetComponent<BoxCollider2D>() == Physics2D.OverlapPoint(touchPos))
                     {
 
                         tapped = true;        
