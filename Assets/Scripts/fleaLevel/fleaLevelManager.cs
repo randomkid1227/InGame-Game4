@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class fleaLevelManager : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class fleaLevelManager : MonoBehaviour
         numberOfItems = (int)Random.Range(3f, 5f);
         Debug.Log(numberOfItems);
         startTime = Time.time;
-        endTime = startTime + 5; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
+        endTime = startTime + Time.t; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
         
     }
 
@@ -40,11 +41,11 @@ public class fleaLevelManager : MonoBehaviour
         }
         if (Time.time >= endTime)
         {
-            int x = 1; //TODO: Enter logic to see if won
+            LoadByIndex(2); // Lose screen  
         }
         if (numberOfItems <= 0)
         {
-            Debug.Log("WON"); //Win condition
+            LoadByIndex(1); // Win screen
         }
         else if (remainingLevelTime <= 0) Debug.Log("LOST");
     }
@@ -60,5 +61,9 @@ public class fleaLevelManager : MonoBehaviour
         fleaInstance.transform.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
         Debug.Log("...");
 
+    }
+    public void LoadByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }

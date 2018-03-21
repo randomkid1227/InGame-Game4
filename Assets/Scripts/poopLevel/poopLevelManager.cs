@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class poopLevelManager : MonoBehaviour {
@@ -19,7 +20,7 @@ public class poopLevelManager : MonoBehaviour {
         numberOfItems = (int)Random.Range(3f, 5f);
         Debug.Log(numberOfItems);
         startTime = Time.time;
-        endTime = startTime + 5; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
+        endTime = startTime + 500; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
         for (int i = 0; i < numberOfItems; i++) Invoke("spawnObjects", 0.05f);
     }
 	
@@ -27,11 +28,11 @@ public class poopLevelManager : MonoBehaviour {
 	void Update () {
         if (Time.time >= endTime)
         {
-            int x = 1; //TODO: Enter logic to see if won
+            LoadByIndex(2); // Lose screen  
         }
         if (numberOfItems <= 0)
         {
-            Debug.Log("WON"); //Win condition
+            LoadByIndex(1); // Win screen
         }
 		
 	}
@@ -42,5 +43,10 @@ public class poopLevelManager : MonoBehaviour {
         poopInstance.transform.position = new Vector3( Random.Range(minX, maxX), Random.Range(minY, maxY) );
         Debug.Log("...");
         
+    }
+
+    public void LoadByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }
