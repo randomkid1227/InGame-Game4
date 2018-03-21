@@ -26,6 +26,20 @@ public class Tappable : MonoBehaviour
     void Update()
     {
         CheckTouch();
+        CheckMouse();
+    }
+
+    void CheckMouse()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (GetComponent<BoxCollider2D>() == Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+            {
+
+                tapped = true;
+                if (tapped) Destroy(this.gameObject);
+            }
+        }
     }
 
     void CheckTouch()
@@ -69,6 +83,7 @@ public class Tappable : MonoBehaviour
                     if (tapped) Destroy(this.gameObject);
                     break;
             }
+
         }
     }
 }
