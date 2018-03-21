@@ -5,6 +5,8 @@ using UnityEngine;
 public class GlobalControl : MonoBehaviour 
 {
 	public int PlayerWon;
+    private int[] DontLoad;
+    private int[] Load;
 
 	public static GlobalControl Instance;
 
@@ -19,5 +21,6 @@ public class GlobalControl : MonoBehaviour
 		{
 			Destroy (gameObject);
 		}
-	}
+    }
+
 }
