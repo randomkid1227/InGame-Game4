@@ -12,7 +12,7 @@ public class TransitionTap : MonoBehaviour {
     void Start()
 	{
         DontLoad = GlobalControl.Instance.DontLoad;
-        DontLoad = GlobalControl.Instance.Load;
+        Load = GlobalControl.Instance.Load;
         Levels = GlobalControl.Instance.Levels;
 	}
 
