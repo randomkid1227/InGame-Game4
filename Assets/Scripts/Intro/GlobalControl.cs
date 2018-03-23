@@ -5,8 +5,12 @@ using UnityEngine;
 public class GlobalControl : MonoBehaviour 
 {
 	public int PlayerWon;
-    private int[] DontLoad;
-    private int[] Load;
+    public int Levels;
+    public int[] DontLoad;
+    public int[] Load;
+    public int HP;
+    public int Score;
+    public float Time;
 
 	public static GlobalControl Instance;
 

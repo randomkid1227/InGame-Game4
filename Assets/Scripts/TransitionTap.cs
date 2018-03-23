@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class TransitionTap : MonoBehaviour {
     
     public int Levels;
-    private int[] DontLoad;
-    private int[] Load;
-
-	private void Start()
+    public int[] DontLoad;
+    public int[] Load;
+	
+    void Start()
 	{
         DontLoad = GlobalControl.Instance.DontLoad;
         DontLoad = GlobalControl.Instance.Load;
+        Levels = GlobalControl.Instance.Levels;
 	}
 
 	// Update is called once per frame
@@ -21,7 +22,7 @@ public class TransitionTap : MonoBehaviour {
 	}
 
     void LoadByTap () {
-        if (Input.touchCount > 0) {
+        if (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) {
             LoadByIndex(NextLevel());
         }
     }

@@ -26,7 +26,7 @@ public class fleaLevelManager : MonoBehaviour
         numberOfItems = (int)Random.Range(3f, 5f);
         Debug.Log(numberOfItems);
         startTime = Time.time;
-        endTime = startTime + Time.t; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
+        endTime = startTime + 5000; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
         
     }
 

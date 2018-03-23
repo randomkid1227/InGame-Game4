@@ -7,20 +7,13 @@ public class WinScript : MonoBehaviour {
     public float HP;
     public float Time;
     public float Score;
-    public float changeInLevelTime;
+    public float changeInLevelTime; // percent
+    public float ScoreGain;
 
-	// Use this for initialization
 	void Start () {
         HP = GlobalControl.Instance.HP;
         Time = GlobalControl.Instance.Time * changeInLevelTime;
-        Score = GlobalControl.Instance.Score;
+        Score = GlobalControl.Instance.Score + ScoreGain;
 	}
 
-
-
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
