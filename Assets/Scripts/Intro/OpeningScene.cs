@@ -17,22 +17,16 @@ public class OpeningScene : MonoBehaviour {
         GlobalControl.Instance.Levels = Levels;
 	}
 
-	private void Awake()
-	{
-        // Initialize the DontLoad Array
-        int[] DontLoadArr = GlobalControl.Instance.DontLoad;
-        DontLoadArr = new int[2];
-        DontLoadArr[0] = 0; 
-        DontLoadArr[1] = 2;
-
-        // Intilialize the Load Array
-        int[] LoadArr = GlobalControl.Instance.Load;
-        LoadArr = new int[Levels - 2];
-        int x = Levels + Screens;
-        for (int i = Screens; i < (x - 2); i++) {
-            if (i != 0 && i != 2) {
-                LoadArr[i - Screens] = i;
-            }
-        }
-	}
+	//private void Awake()
+	//{
+ //       // Intilialize the Load Array
+ //       int[] LoadArr = GlobalControl.Instance.Load;
+ //       LoadArr = new int[Levels - 2];
+ //       int x = Levels + Screens;
+ //       for (int i = Screens; i < (x - 2); i++) {
+ //           if (i != 0 && i != 2) {
+ //               LoadArr[i - Screens] = i;
+ //           }
+ //       }
+	//}
 }
