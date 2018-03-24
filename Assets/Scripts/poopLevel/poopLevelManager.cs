@@ -20,8 +20,9 @@ public class poopLevelManager : MonoBehaviour {
         numberOfItems = (int)Random.Range(3f, 5f);
         Debug.Log(numberOfItems);
         startTime = Time.time;
-        endTime = startTime + 500; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
+        endTime = startTime + 6f; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
         for (int i = 0; i < numberOfItems; i++) Invoke("spawnObjects", 0.05f);
+        Debug.Log(Time.time);
     }
 	
 	// Update is called once per frame

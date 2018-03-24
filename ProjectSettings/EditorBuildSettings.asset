@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Screens/StartScreen.unity
-    guid: 2d3a5b4babeaa3144b76d0561b9904ee
-  - enabled: 1
-    path: Assets/Scenes/Screens/intro.unity
+    path: Assets/Scenes/Screens/IntroGame.unity
     guid: 2bc38471a0c4641f9966542f17859c9e
+  - enabled: 1
+    path: Assets/Scenes/Screens/TransitionWin.unity
+    guid: d0a6fc53674804bc783a555ffd59fa11
+  - enabled: 1
+    path: Assets/Scenes/Screens/TransitionLose.unity
+    guid: 8a0c9845a98d2401781549d7bee7cb88
+  - enabled: 1
+    path: Assets/Scenes/Levels/l_poop.unity
+    guid: b4d5cc4200455ac4a8685dc07358e9d6
+  - enabled: 1
+    path: Assets/Scenes/Levels/l_fleas.unity
+    guid: aba77efc33dff9e49a16e24a0b496e14
+  - enabled: 1
+    path: Assets/Scenes/Levels/l_demo.unity
+    guid: 63dfa88534be4d94d972dc0211728950

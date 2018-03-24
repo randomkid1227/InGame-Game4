@@ -17,6 +17,8 @@ public class fleaLevelManager : MonoBehaviour
     public int numberOfItems;
     public int itemCounter;
     private int lastSpawned;
+    GameObject[] fleas;
+    int numberOfFleas;
 
     // Use this for initialization
     void Start()
@@ -24,30 +26,33 @@ public class fleaLevelManager : MonoBehaviour
         itemCounter = 0;
         lastSpawned = 0;
         numberOfItems = (int)Random.Range(3f, 5f);
-        Debug.Log(numberOfItems);
         startTime = Time.time;
-        endTime = startTime + 5000; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
-        
+        endTime = startTime + 6f; //Manager.gameObject.levelTime; //TODO: create leveltime in Manager or something...
     }
 
     // Update is called once per frame
     void Update()
     {
+        fleas = GameObject.FindGameObjectsWithTag("flea");
+        numberOfFleas = fleas.Length;
         updateRemainingLevelTime();
-        if (Time.time - lastSpawned > 1 && remainingLevelTime > 0.5f && itemCounter < numberOfItems)
+        if (Time.time - lastSpawned > 1 && remainingLevelTime > 1f && itemCounter < numberOfItems)
         {
             spawnObject();
             itemCounter++;
         }
-        if (Time.time >= endTime)
+        if (remainingLevelTime <= 0)
         {
-            LoadByIndex(2); // Lose screen  
+            if (GameObject.FindGameObjectsWithTag("flea").Length == 0)
+            {
+                LoadByIndex(1); // Win screen
+            }
+            else
+            {
+                Debug.Log(GameObject.FindGameObjectsWithTag("flea").Length);
+                LoadByIndex(2);
+            }
         }
-        if (numberOfItems <= 0)
-        {
-            LoadByIndex(1); // Win screen
-        }
-        else if (remainingLevelTime <= 0) Debug.Log("LOST");
     }
 
     void updateRemainingLevelTime()

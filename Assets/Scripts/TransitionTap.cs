@@ -23,6 +23,9 @@ public class TransitionTap : MonoBehaviour {
 
     void LoadByTap () {
         if (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) {
+            DontLoad = GlobalControl.Instance.DontLoad;
+            Load = GlobalControl.Instance.Load;
+            Levels = GlobalControl.Instance.Levels;
             LoadByIndex(NextLevel());
         }
     }

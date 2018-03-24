@@ -12,6 +12,8 @@ public class OpeningScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        GlobalControl.Instance.DontLoad = new int[] {4, 5};
+        GlobalControl.Instance.Load = new int[] { 3 };
         GlobalControl.Instance.HP = HP;
         GlobalControl.Instance.Score = Score;
         GlobalControl.Instance.Levels = Levels;

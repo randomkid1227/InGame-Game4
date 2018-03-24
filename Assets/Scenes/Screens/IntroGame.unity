@@ -136,9 +136,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 479590902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fda5efcbd79b489182606c12c307f2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b99d671d7e0046d6ad332041fd29528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerWon: 0
+  Levels: 2
+  DontLoad: 
+  Load: 
+  HP: 0
+  Score: 0
+  Time: 0
 --- !u!4 &479590904
 Transform:
   m_ObjectHideFlags: 0
@@ -471,5 +478,5 @@ MonoBehaviour:
   HP: 3
   Time: 6000
   Score: 0
-  Levels: 2
+  Levels: 3
   Screens: 3
